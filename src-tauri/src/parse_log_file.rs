@@ -41,12 +41,6 @@ pub struct TeamData {
   pub side: TeamSide,
 }
 
-impl TeamData {
-  pub fn new() -> Self {
-    TeamData { players: Vec::new(), side: TeamSide::Mixed }
-  }
-}
-
 #[derive(Serialize, Deserialize, Clone)]
 pub struct LogFileData {
   pub game_state: GameState,
@@ -57,12 +51,6 @@ pub struct LogFileData {
   pub win_condition: String,
   pub left: TeamData,
   pub right: TeamData
-}
-
-impl LogFileData {
-  pub fn new() -> Self {
-    LogFileData { game_state: GameState::Closed, game_type: GameType::Custom, timestamp: "".to_string(), duration: 0, map: "".to_string(), win_condition: "".to_string(), left: TeamData::new(), right: TeamData::new() }
-  }
 }
 
 #[tauri::command]
