@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
-import { About } from "./About/About"
-import { Game } from "./Game/Game"
+import { About } from "./About"
+import { Game } from "./Game"
 import { Root } from "./Root"
 
 export enum Routes {

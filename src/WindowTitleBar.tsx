@@ -1,8 +1,8 @@
 import { Header, createStyles, Box, Group } from "@mantine/core"
 import { appWindow } from "@tauri-apps/api/window"
 import { Link, useLocation } from "react-router-dom"
-import logo from "../assets/logo/32x32.png"
-import { Routes } from "../Router"
+import logo from "./assets/logo/32x32.png"
+import { Routes } from "./Router"
 
 export interface WindowTitleBarProps {
     children?: React.ReactNode

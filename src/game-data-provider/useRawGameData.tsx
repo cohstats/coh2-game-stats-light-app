@@ -15,12 +15,11 @@ export const useRawGameData = () => {
     const [logFileChecked, setLogFileChecked] = useState(false)
     const [logFileExists, setLogFileExists] = useState<boolean>()
     const stopWatcherRef = useRef<() => Promise<void>>()
-    const [interval, setInterval] = useState(2000)
+    const [interval, setInterval] = useState(2000) // default log file checking interval is 2 seconds
     const [rawGameData, setRawGameData] = useState<RawGameData>()
     // set the default log file path
     useEffect(() => {
         const getDefaultLogFilePath = async () => {
-            console.log("getDefaultLogFilePath")
             const path = (await invoke("get_default_log_file_path")) as string
             setLogFilePath(path)
             setLogFileChecked(false)
@@ -28,15 +27,13 @@ export const useRawGameData = () => {
         if (logFilePath === undefined) {
             getDefaultLogFilePath()
         }
-        console.log("change log file path", logFilePath)
     }, [logFilePath])
-    // when log file path is set and unchecked: check for the file
+    // when log file path is set and unchecked: check for the file existing in path
     useEffect(() => {
         const checkLogFile = async () => {
             const result = (await invoke("check_log_file_exists", {
                 path: logFilePath,
             })) as boolean
-            console.log("checkLogFile", result)
             setLogFileChecked(true)
             setLogFileExists(result)
         }
@@ -44,7 +41,7 @@ export const useRawGameData = () => {
             checkLogFile()
         }
     }, [logFilePath, logFileChecked])
-    // when log file exists start watching
+    // when log file exists start watching the log file
     useEffect(() => {
         const getLogFileData = async (path: string) => {
             const data = (await invoke("parse_log_file_reverse", {
@@ -53,7 +50,6 @@ export const useRawGameData = () => {
             setRawGameData(data)
         }
         const recreateWatcher = async (path: string) => {
-            console.log("recreateWatcher")
             if (stopWatcherRef.current) {
                 await stopWatcherRef.current()
                 stopWatcherRef.current = undefined

@@ -1,5 +1,5 @@
 import { MantineProvider } from "@mantine/core"
-import { GameDataProvider } from "./GameDataProvider/GameDataProvider"
+import { GameDataProvider } from "./game-data-provider/GameDataProvider"
 
 interface ProvidersProps {
     children?: React.ReactNode

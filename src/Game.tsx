@@ -1,4 +1,4 @@
-import { useGameData } from "../GameDataProvider/GameDataProvider"
+import { useGameData } from "./game-data-provider/GameDataProvider"
 
 export const Game: React.FC = () => {
     const gameData = useGameData()
@@ -28,6 +28,13 @@ export const Game: React.FC = () => {
                     {gameData.rawGameData.timestamp.length > 0 ? (
                         <>
                             Map: {gameData.rawGameData.map}
+                            <img
+                                src={
+                                    "/map-images/" +
+                                    gameData.rawGameData.map +
+                                    "_x300.webp"
+                                }
+                            />
                             Duration: {gameData.rawGameData.duration} Seconds
                         </>
                     ) : null}

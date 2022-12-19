@@ -16,7 +16,7 @@ import {
     Box,
     Grid,
 } from "@mantine/core"
-import logoBig from "../assets/logo/Square310x310Logo.png"
+import logoBig from "./assets/logo/Square310x310Logo.png"
 
 export const About: React.FC = () => {
     const [appVersion, setAppVersion] = useState<string>()
