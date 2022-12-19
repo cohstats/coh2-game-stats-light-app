@@ -612,6 +612,11 @@
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.0.5.tgz#d5c65626add4c3c185a89aa5bd38b1e42daec075"
   integrity sha512-my0Mycd+jruq/1lQuO5LBB6WTlL/e8DTCYWp44DfMTDcXz8DcTlgF0ISaLsGewt+ctHN+yA8xMq3q/N7uWJPug==
 
+"@tabler/icons@^1.117.0":
+  version "1.117.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-1.117.0.tgz#2ffafca94f868940cf84a839e284c243e095c45a"
+  integrity sha512-4UGF8fMcROiy++CCNlzTz6p22rxFQD/fAMfaw/8Uanopl41X2SCZTmpnotS3C6Qdrk99m8eMZySa5w1y99gFqQ==
+
 "@tauri-apps/api@^1", "@tauri-apps/api@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@tauri-apps/api/-/api-1.2.0.tgz#1f196b3e012971227f41b98214c846430a4eb477"
@@ -776,9 +781,11 @@ clsx@1.1.1:
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
   integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
 
-"coh-stats-components@github:cohstats/coh-stats-components#0.0.2":
+"coh-stats-components@github:cohstats/coh-stats-components#0.0.5":
   version "0.0.10"
-  resolved "https://codeload.github.com/cohstats/coh-stats-components/tar.gz/0fc0c3beb5b6e1f44c964ec37c56e3be32511e0a"
+  resolved "https://codeload.github.com/cohstats/coh-stats-components/tar.gz/f99aa8b5bec07eaf34443790566b54a3860a6e55"
+  dependencies:
+    "@tabler/icons" "^1.117.0"
 
 color-convert@^1.9.0:
   version "1.9.3"

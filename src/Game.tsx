@@ -1,12 +1,12 @@
 import { useGameData } from "./game-data-provider/GameDataProvider"
-import { TestComponent } from "coh-stats-components"
+import { ColorSchemeToggle } from "coh-stats-components"
 
 export const Game: React.FC = () => {
     const gameData = useGameData()
     console.log("gamedata", gameData)
     return (
         <>
-            <TestComponent color="blue">Hello World!</TestComponent>
+            <ColorSchemeToggle />
             {gameData.logFileFound ? (
                 <>
                     {gameData.rawGameData.game_state === "Closed" ? (
