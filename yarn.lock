@@ -776,6 +776,10 @@ clsx@1.1.1:
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
   integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
 
+"coh-stats-components@github:cohstats/coh-stats-components#0.0.2":
+  version "0.0.10"
+  resolved "https://codeload.github.com/cohstats/coh-stats-components/tar.gz/0fc0c3beb5b6e1f44c964ec37c56e3be32511e0a"
+
 color-convert@^1.9.0:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.3.tgz#bb71850690e1f136567de629d2d5471deda4c1e8"
