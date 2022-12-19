@@ -13,7 +13,8 @@ fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![get_default_log_file_path, check_log_file_exists, parse_log_file::parse_log_file_reverse])
         .plugin(Watcher::default())
-        .setup(|app| {
+        .plugin(tauri_plugin_window_state::Builder::default().build())
+        .setup(|app| { // Add window shadows
             let window = app.get_window("main").unwrap();
             set_shadow(&window, true).expect("Unsupported platform!");
             Ok(())
