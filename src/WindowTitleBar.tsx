@@ -9,48 +9,66 @@ export interface WindowTitleBarProps {
 }
 
 const useStyles = createStyles((theme) => ({
+    wrapper: {
+        display: "flex",
+        flexFlow: "column",
+        height: "100vh",
+    },
     header: {
-        backgroundColor: theme.fn.variant({
-            variant: "filled",
-            color: theme.primaryColor,
-        }).background,
+        backgroundColor:
+            theme.colorScheme === "dark"
+                ? theme.fn.darken(theme.colors.blue[9], 0.9)
+                : theme.fn.lighten(theme.colors.blue[1], 0.7),
+        flex: "0 1 auto",
+    },
+    children: {
+        flex: "1 1 auto",
+        overflowY: "auto",
     },
     link: {
         display: "block",
         lineHeight: 1,
-        padding: "8px 12px",
+        padding: "8px 8px",
         borderRadius: theme.radius.sm,
         textDecoration: "none",
-        color: theme.white,
+        color: theme.colorScheme === "dark" ? theme.white : theme.black,
         fontSize: theme.fontSizes.sm,
         fontWeight: 500,
         userSelect: "none",
         cursor: "pointer",
 
         "&:hover": {
-            backgroundColor: theme.fn.lighten(
-                theme.fn.variant({
-                    variant: "filled",
-                    color: theme.primaryColor,
-                }).background!,
-                0.1
-            ),
+            backgroundColor:
+                theme.colorScheme === "dark"
+                    ? theme.fn.darken(theme.colors.blue[9], 0.7)
+                    : theme.fn.lighten(theme.colors.blue[9], 0.7),
+        },
+    },
+    windowButton: {
+        padding: "8px 12px",
+    },
+    closeButton: {
+        "&:hover": {
+            backgroundColor:
+                theme.colorScheme === "dark"
+                    ? theme.colors.red[8]
+                    : theme.colors.red[7],
         },
     },
 }))
 
 export const WindowTitleBar: React.FC<WindowTitleBarProps> = ({ children }) => {
-    const { classes } = useStyles()
+    const { classes, cx } = useStyles()
     const location = useLocation()
     return (
-        <>
+        <div className={classes.wrapper}>
             <Header
                 height={35}
                 className={classes.header}
                 data-tauri-drag-region
             >
                 <Group data-tauri-drag-region position="apart" pl="xs">
-                    <Group data-tauri-drag-region spacing={0}>
+                    <Group data-tauri-drag-region spacing={4}>
                         <img data-tauri-drag-region src={logo} width={20} />
                         <Link to={Routes.GAME} className={classes.link}>
                             Game
@@ -65,27 +83,33 @@ export const WindowTitleBar: React.FC<WindowTitleBarProps> = ({ children }) => {
                     <Group data-tauri-drag-region spacing={0}>
                         <a
                             onClick={() => appWindow.minimize()}
-                            className={classes.link}
+                            className={cx(classes.link, classes.windowButton)}
                         >
                             ─
                         </a>
                         <a
                             onClick={() => appWindow.toggleMaximize()}
-                            className={classes.link}
+                            className={cx(classes.link, classes.windowButton)}
                         >
                             ☐
                         </a>
                         <a
                             onClick={() => appWindow.close()}
-                            className={classes.link}
+                            className={cx(
+                                classes.link,
+                                classes.windowButton,
+                                classes.closeButton
+                            )}
                         >
                             X
                         </a>
                     </Group>
                 </Group>
             </Header>
-            {location.pathname === Routes.ABOUT ? "true" : "false"}
-            <Box>{children}</Box>
-        </>
+            <Box className={classes.children}>
+                {location.pathname === Routes.ABOUT ? "true" : "false"}
+                {children}
+            </Box>
+        </div>
     )
 }
