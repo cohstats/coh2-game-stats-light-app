@@ -12,14 +12,14 @@
     },
     "dependencies": {
         "@emotion/react": "^11.10.5",
-        "@mantine/core": "^5.9.4",
-        "@mantine/hooks": "^5.9.4",
+        "@mantine/core": "^5.10.0",
+        "@mantine/hooks": "^5.10.0",
         "@tauri-apps/api": "^1.2.0",
+        "coh-stats-components": "github:cohstats/coh-stats-components#0.0.6",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.4.5",
-        "tauri-plugin-fs-watch-api": "github:tauri-apps/tauri-plugin-fs-watch#1f460724c82cc7e0ab38cf05443fe00e07321459",
-        "coh-stats-components": "github:cohstats/coh-stats-components#0.0.5"
+        "tauri-plugin-fs-watch-api": "github:tauri-apps/tauri-plugin-fs-watch#1f460724c82cc7e0ab38cf05443fe00e07321459"
     },
     "devDependencies": {
         "@tauri-apps/cli": "^1.2.2",
