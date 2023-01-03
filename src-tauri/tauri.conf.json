@@ -60,7 +60,7 @@
                 "focus": true,
                 "title": "Coh2 Game Stats Lightweight",
                 "width": 800,
-                "minWidth": 200,
+                "minWidth": 350,
                 "height": 600,
                 "minHeight": 200,
                 "decorations": false
