@@ -24,6 +24,8 @@ const useStyles = createStyles((theme) => ({
         color: theme.white,
         fontSize: theme.fontSizes.sm,
         fontWeight: 500,
+        userSelect: "none",
+        cursor: "pointer",
 
         "&:hover": {
             backgroundColor: theme.fn.lighten(
