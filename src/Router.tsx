@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import { About } from "./About"
 import { Game } from "./Game"
 import { Root } from "./Root"
+import { Settings } from "./Settings"
 
 export enum Routes {
     GAME = "/",
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
             },
             {
                 path: Routes.SETTINGS,
-                element: <div>Settings view</div>,
+                element: <Settings />,
             },
             {
                 path: Routes.ABOUT,
