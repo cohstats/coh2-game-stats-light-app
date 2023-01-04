@@ -990,6 +990,11 @@ magic-string@^0.27.0:
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.4.13"
 
+mantine-flagpack@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/mantine-flagpack/-/mantine-flagpack-1.0.1.tgz#26b45e36912754286edc69182d1ce085102c6920"
+  integrity sha512-ej2o82IfMVo5LGdeVW9fxIrGBmT2yiDN/E2ZeK8FRvDlJ8LLc3R60pnSvXHr25NfdPuePYYoQrlc0qNGJAMeNg==
+
 ms@2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
